@@ -39,7 +39,27 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'main'
+    'main',
+    'pwa'
+]
+
+PWA_APP_NAME = 'Todo'
+PWA_APP_DESCRIPTION = "Todo"
+PWA_APP_THEME_COLOR = '#10B981'
+PWA_APP_BACKGROUND_COLOR = '#111827'
+PWA_APP_DISPLAY = 'standalone'
+PWA_APP_SCOPE = '/'
+PWA_APP_START_URL = '/'
+
+PWA_APP_ICONS = [
+    {
+        'src': '/static/img/icon-192.png',
+        'sizes': '192x192'
+    },
+    {
+        'src': '/static/img/icon-512.png',
+        'sizes': '512x512'
+    }
 ]
 
 X_FRAME_OPTIONS = "SAMEORIGIN"
@@ -51,6 +71,7 @@ LOGIN_URL = "login"
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'main.middleware.MyMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
