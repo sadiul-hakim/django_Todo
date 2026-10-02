@@ -22,9 +22,9 @@
                   <div>
                     <p class="lead">
                       {% if todo.completed %}
-                        <span class="text-decoration-line-through">{{ todo.title }}</span>
+                        <span class="text-decoration-line-through text-primary">{{ todo.title }}</span>
                       {% else %}
-                        {{ todo.title }}
+                        <span class="text-primary">{{ todo.title }}</span>
                       {% endif %}
                     </p>
                     <p class="text-muted">{{ todo.description }}</p>
@@ -48,6 +48,8 @@
                 <li class="page-item">
                   <a class="page-link"
                     href="?page={{ todos.previous_page_number }}{% if text %}
+                      
+                      
                       
                     
                     
@@ -73,6 +75,8 @@
                     <a class="page-link"
                       href="?page={{ num }}{% if text %}
                         
+                        
+                        
                       
                       
                       
@@ -88,6 +92,8 @@
                 <li class="page-item">
                   <a class="page-link"
                     href="?page={{ todos.next_page_number }}{% if text %}
+                      
+                      
                       
                     
                     
